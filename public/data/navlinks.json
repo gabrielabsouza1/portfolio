@@ -1,0 +1,20 @@
+{
+    "links": [
+        {
+            "label": "About",
+            "href": "#about"
+        },
+        {
+            "label": "Experiences",
+            "href": "#experiences"
+        },
+        {
+            "label": "Skills",
+            "href": "#skills"
+        },
+        {
+            "label": "Projects",
+            "href": "#projects"
+        }
+    ]
+}

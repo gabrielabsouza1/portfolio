@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from "framer-motion"
 import style from './style.module.scss';
 
 const Bubbles: React.FC<{children: any}> = ({children}) => {

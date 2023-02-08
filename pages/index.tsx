@@ -11,11 +11,10 @@ import Bubbles from 'components/bubbles/Bubbles';
 export default function Home() {
   return (
     <Bubbles>
-      <section className='background_dark'>
+      <section className='bg_palette1'>
         <header>
           <Navbar />
         </header>
-
         <main>
           <div className='container-fluid ps-lg-5 pb-5 pe-lg-0 bg_palette1'>
             <div className="d-flex align-items-center" style={{ height: 90 + 'vh', minHeight: 700 + 'px' }}>
@@ -28,7 +27,7 @@ export default function Home() {
               </div>
 
               <div className='col-lg-7 px-0' >
-                <img src="/img/header.png" className='img-fluid bouncing_img' alt="" />
+                <img src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
               </div>
             </div>
 

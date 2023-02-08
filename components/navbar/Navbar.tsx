@@ -27,7 +27,7 @@ const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
 
 const Navbar: React.FC<{}> = () => {
     return (
-        <nav className={styles.navbar}>
+        <nav className={styles.navbar} style={{zIndex: 9999}}>
             <div className={styles['logo-container']}>
                 <a href={'/'}><img width={70} src="/img/logo2.png" className='img-fluid' alt="" /></a>
             </div>

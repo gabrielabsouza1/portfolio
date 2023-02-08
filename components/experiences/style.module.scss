@@ -1,0 +1,18 @@
+.animation {
+    position: relative;
+}
+
+.animation::before {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #eb176b 0%, #7226d1 100%);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: width .2s linear;
+}
+
+.animation:hover::before {
+    width: 100%;
+}

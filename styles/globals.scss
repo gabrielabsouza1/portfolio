@@ -1,3 +1,5 @@
+@import './fonts.scss';
+
 $pink-pallete: #eb176b;
 $purple-pallete: #7226d1;
 $cian-pallete: #31ffe2;
@@ -19,6 +21,15 @@ body {
 
 .anchor {
     scroll-margin-top: 50px;
+}
+
+.overflow_hidden {
+    overflow: hidden;
+}
+
+.grid_layout {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 body::-webkit-scrollbar {
@@ -45,10 +56,6 @@ main {
     .box_name {
         margin-top: -150px;
     }
-}
-
-.text_white {
-    color: #fff;
 }
 
 .hello_text {
@@ -94,8 +101,55 @@ main {
     width: 230px;
 }
 
-.bg_skills {
+.bg_palette1 {
     background: linear-gradient(90deg, $background-dark-pallete 0%, $background-dark-pallete 70%, #171519 100%);
+}
+
+.bg_palette2 {
+    background: linear-gradient(90deg, #2a292c 0%, #2a292c 70%, #171519 100%);
+}
+
+.bouncing_img {
+    animation: boucing-img 6s infinite;
+}
+
+.box_about {
+    padding: 3em; 
+    border: #2a292c solid 1px;
+    box-shadow: inset 0 0 15px 3px #2a292c;
+    border-radius: 15px;
+}
+
+.social_media {
+    padding: 13px;
+    border: #2a292c solid 1px;
+    box-shadow: inset 0 0 5px 1px #2a292c;
+    border-radius: 7px;
+    margin-right: 40px;
+    transition: all 1s ease 0s, opacity 2s cubic-bezier(0.5, 0, 0, 1) 0s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0s;
+
+    a {
+        transition: all 1s ease 0s, opacity 2s cubic-bezier(0.5, 0, 0, 1) 0s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0s;
+    }
+}
+
+.social_media:hover {
+    border: $purple-pallete solid 1px;
+    box-shadow: inset 0 0 5px 1px $purple-pallete;
+
+    a {
+        color: $purple-pallete;
+    }
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+@keyframes boucing-img {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
 
 @keyframes text-animation {
@@ -108,11 +162,11 @@ main {
     }
 
     20% {
-        margin-top: -7.62rem;
+        margin-top: 0;
     }
 
     30% {
-        margin-top: -7.62rem;
+        margin-top: 0;
     }
 
     40% {

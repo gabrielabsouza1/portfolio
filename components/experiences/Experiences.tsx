@@ -15,7 +15,7 @@ const Experiences: React.FC<{}> = () => {
   const [activeNavItem, setActiveNavItem] = useState(navExperiences);
   return (
     <div className="row mt-5">
-      <div className="col-lg-4 pe-lg-5" >
+      <div className="col-lg-4 mb-5 pe-lg-5" >
         <div className="p-lg-5 p-3 background_dark" style={{ borderRadius: 7 + 'px' }}>
           <div className={activeNavItem.showLeadster ? `${style.animation} d-flex justify-content-between align-items-center cursor_pointer mb-5 mt-lg-3` : `${style.animation} cursor_pointer mb-5 mt-lg-3`} onClick={() => setActiveNavItem(activeNavItem => ({ ...navExperiences, showLeadster: true }))}>
             <h3 className={activeNavItem.showLeadster ? 'f_size_20 f_700 mb-0 text_pink' : 'text_white f_size_20 mb-0'}>Leadster</h3>

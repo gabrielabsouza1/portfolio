@@ -10,6 +10,7 @@ import Experiences from 'components/experiences/Experiences';
 import Skills from 'components/skills/Skills';
 import Bubbles from 'components/bubbles/Bubbles';
 import ExperiencesMobile from 'components/experiences/ExperiencesMobile';
+import Image from 'next/image';
 
 export default function Home() {
   const [isMobile, setisMobile] = useState(false)
@@ -39,7 +40,7 @@ export default function Home() {
                 </div>
 
                 <div className='img_header_visibility col-sm-10 col-xl-6 col-xxl-7 px-0' >
-                  <img src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
+                  <Image width={1082} height={1027} priority src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
                 </div>
               </div>
 
@@ -48,7 +49,7 @@ export default function Home() {
                   <h2 className="text_white hello_text pt-5 pb-lg-5 pb-3">About</h2>
                   <div className='row align-items-center box_about position-relative' style={{ zIndex: 5, background: 'transparent', backdropFilter: 'blur(20px)' }}>
                     <div className="col-lg-4 px-0 px-sm-5 px-lg-0">
-                      <img src="/img/me2.png" className='img-fluid' style={{ borderRadius: 5 + 'px' }} alt="" />
+                      <Image width={431} height={431} src="/img/me2.png" className='img-fluid' style={{ borderRadius: 5 + 'px' }} alt="" />
                     </div>
                     <div className="col-lg-6 ms-lg-5 pe-lg-5 mt-4 mt-lg-0">
                       <p className='text_pink f_size_16em f_600 mb-2'>About me</p>
@@ -111,7 +112,7 @@ export default function Home() {
                   <div className='row align-items-center position-relative pb-5'>
                     <div className="col-lg-6">
                       <a href="https://leadster.com.br/" rel='noreferrer' target={'_blank'}>
-                        <img src="/img/leadster.png" className='img-fluid project_img' alt="" />
+                        <Image width={688} height={480} src="/img/leadster.png" className='img-fluid project_img' alt="" />
                       </a>
                     </div>
                     <div className="col-lg-5 project_description_mobile px-4 px-sm-5 pe-lg-4 ">
@@ -138,7 +139,7 @@ export default function Home() {
                   <div className='row align-items-center position-relative justify-content-end flex-row-reverse pt-5 mt-lg-5'>
                     <div className="col-lg-6">
                       <a href="https://gallery-blue.vercel.app/" rel='noreferrer' target={'_blank'}>
-                        <img src="/img/gallery.png" className='img-fluid project_img' alt="" />
+                        <Image width={688} height={480} src="/img/gallery.png" className='img-fluid project_img' alt="" />
                       </a>
                     </div>
                     <div className="col-lg-5 project_description_mobile px-4 px-sm-5 pe-lg-4">

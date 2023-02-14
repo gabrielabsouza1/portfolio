@@ -311,6 +311,7 @@ main {
 }
 
 .project_description_mobile {
+    z-index: 2;
     @media (max-width: 991px) {
         position: absolute;
         top: 10%;

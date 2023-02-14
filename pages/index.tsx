@@ -11,6 +11,7 @@ import Skills from 'components/skills/Skills';
 import Bubbles from 'components/bubbles/Bubbles';
 import ExperiencesMobile from 'components/experiences/ExperiencesMobile';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export default function Home() {
   const [isMobile, setisMobile] = useState(false)
@@ -23,6 +24,17 @@ export default function Home() {
   }, []);
   return (
     <>
+    <Head>
+        <title>Gabriela Souza Portfolio</title>
+        <link rel="icon" href="/img/favicon-32x32.png" />
+        <meta name="description" content="Portfolio Front end Developer" />
+        <link rel="canonical" href="https://portfolio-gabriela.vercel.app/"></link>
+        <meta property="og:title" content="Gabriela Souza Portfolio" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://portfolio-gabriela.vercel.app/img/meta_image.png" />
+        <meta property="og:url" content="https://portfolio-gabriela.vercel.app/" />
+        <meta property="og:description" content="Portfolio Front end Developer"></meta>
+      </Head>
       <Bubbles>
         <section className='bg_palette1'>
           <header>

@@ -68,7 +68,7 @@ const Navbar: React.FC<{}> = () => {
     return (
         <nav className={styles.navbar} style={{ zIndex: 10 }}>
             <div className={styles['logo-container']}>
-                <a href={'/'}><Image height={92} width={70} src="/img/logo2.png" className='img-fluid' alt="" /></a>
+                <a href={'/'}><Image height={92} width={70} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src="/img/logo2.png" className='img-fluid' alt="" /></a>
             </div>
             <Links links={links} />
         </nav>

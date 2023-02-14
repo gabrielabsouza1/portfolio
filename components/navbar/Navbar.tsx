@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as data from '../../public/data/navlinks.json';
 import styles from './style.module.scss';
-import Lottie from 'react-lottie';
-import menuData from '../../public/data/menu.json';
+import Image from 'next/image';
 const linksString = JSON.stringify(data);
 const links = JSON.parse(linksString).links;
 
@@ -69,7 +68,7 @@ const Navbar: React.FC<{}> = () => {
     return (
         <nav className={styles.navbar} style={{ zIndex: 10 }}>
             <div className={styles['logo-container']}>
-                <a href={'/'}><img width={70} src="/img/logo2.png" className='img-fluid' alt="" /></a>
+                <a href={'/'}><Image height={91} width={70} src="/img/logo2.png" className='img-fluid' alt="" /></a>
             </div>
             <Links links={links} />
         </nav>

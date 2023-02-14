@@ -20,14 +20,12 @@
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
     "next": "13.1.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.2",
-    "react-lottie": "^1.2.3",
     "sass": "^1.57.1",
     "typescript": "4.9.4"
-  },
-  "devDependencies": {
-    "@types/react-lottie": "^1.2.6"
   }
 }

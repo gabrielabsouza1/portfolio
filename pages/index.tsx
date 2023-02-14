@@ -40,7 +40,7 @@ export default function Home() {
                 </div>
 
                 <div className='img_header_visibility col-sm-10 col-xl-6 col-xxl-7 px-0' >
-                  <Image width={1082} height={1027} priority src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
+                  <Image width={1082} height={1027} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
                 </div>
               </div>
 

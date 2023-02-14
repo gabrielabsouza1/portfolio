@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as data from '../../public/data/navlinks.json';
 import styles from './style.module.scss';
 import Lottie from 'react-lottie';
@@ -13,11 +13,17 @@ type NavLink = {
 
 const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
     const [open, setOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const buttonHandler = (event: any) => {
         event.preventDefault();
         setOpen(!open);
     };
+
+    useEffect(() => {
+        window.screen.width <= 991 && setIsMobile(true)
+    }, [])
+
 
     return (
         <div className={styles.links_container}>
@@ -27,17 +33,32 @@ const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
                 <span></span>
             </div>
             <div className='position-relative'>
-                <div className={styles.list_links} style={open ? { maxHeight: 240 + 'px', visibility: 'visible'} : { maxHeight: 0, visibility: 'hidden' }}>
-                    {links.map((link: NavLink) => {
-                        return (
-                            <div key={link.href} className={styles.link}>
-                                <a href={link.href}>
-                                    {link.label}
-                                </a>
-                            </div>
-                        )
-                    })}
-                </div>
+                {isMobile &&
+                    (<div className={styles.list_links} style={open ? { maxHeight: 240 + 'px', visibility: 'visible' } : { maxHeight: 0, visibility: 'hidden' }}>
+                        {links.map((link: NavLink) => {
+                            return (
+                                <div key={link.href} className={styles.link}>
+                                    <a href={link.href}>
+                                        {link.label}
+                                    </a>
+                                </div>
+                            )
+                        })}
+                    </div>)
+                }
+                {!isMobile &&
+                    (<div className={styles.list_links}>
+                        {links.map((link: NavLink) => {
+                            return (
+                                <div key={link.href} className={styles.link}>
+                                    <a href={link.href}>
+                                        {link.label}
+                                    </a>
+                                </div>
+                            )
+                        })}
+                    </div>)
+                }
             </div>
         </div>
     )

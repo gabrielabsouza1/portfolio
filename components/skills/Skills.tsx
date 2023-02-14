@@ -49,8 +49,8 @@ const Skills: React.FC<{}> = () => {
     <div id='skills' className='anchor container-fluid pb-lg-4 ps-lg-5 pe-lg-0 bg_palette1'>
       <div className='grid_layout mb-5'>
         <h2 className="text_white hello_text pt-5 pb-lg-5 pb-3">Skills</h2>
-        <div ref={ref} className='d-flex align-items-center justify-content-start'>
-          <div className='position-relative me-5'>
+        <div ref={ref} className='d-flex align-items-center justify-content-center flex-wrap'>
+          <div className='position-relative my-4 me-lg-5'>
             <div className={`${style.glow} ${style.color1}`}>
               <div className={style.glow_inner}></div>
               <div className={style.text_inner}>
@@ -60,7 +60,7 @@ const Skills: React.FC<{}> = () => {
             </div>
             <CircularProgress size={190} className='text_pink' variant='determinate' value={progress1} />
           </div>
-          <div className='position-relative mx-5'>
+          <div className='position-relative my-4 mx-md-5'>
             <div className={`${style.glow} ${style.color5}`}>
               <div className={style.glow_inner}></div>
               <div className={style.text_inner}>
@@ -70,7 +70,7 @@ const Skills: React.FC<{}> = () => {
             </div>
             <CircularProgress size={190} style={{color: '#ff4b66'}} variant='determinate' value={progress2} />
           </div>
-          <div className='position-relative mx-5'>
+          <div className='position-relative my-4 mx-md-5'>
             <div className={`${style.glow} ${style.color2}`}>
               <div className={style.glow_inner}></div>
               <div className={style.text_inner}>
@@ -80,7 +80,7 @@ const Skills: React.FC<{}> = () => {
             </div>
             <CircularProgress size={190} style={{color: '#7226d1'}} variant='determinate' value={progress3} />
           </div>
-          <div className='position-relative mx-5'>
+          <div className='position-relative my-4 mx-md-5'>
             <div className={`${style.glow} ${style.color3}`}>
               <div className={style.glow_inner}></div>
               <div className={style.text_inner}>
@@ -90,7 +90,7 @@ const Skills: React.FC<{}> = () => {
             </div>
             <CircularProgress size={190} style={{color: '#31ffe2'}} variant='determinate' value={progress4} />
           </div>
-          <div className='position-relative ms-5'>
+          <div className='position-relative my-4 ms-md-5'>
             <div className={`${style.glow} ${style.color4}`}>
               <div className={style.glow_inner}></div>
               <div className={style.text_inner}>

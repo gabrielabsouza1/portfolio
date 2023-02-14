@@ -6,7 +6,7 @@ $cian-pallete: #31ffe2;
 $background-dark-pallete: #222123;
 
 :root {
-    --margin-text-animation: -7.62rem;
+    --margin-text-animation: -4.02rem;
 
     @media (max-width: 1628px) {
         --margin-text-animation: -3.62rem;
@@ -19,7 +19,6 @@ $background-dark-pallete: #222123;
 
 * {
     font-family: "Plus Jakarta Sans", sans-serif;
-    $margin-text-animation: -7.62rem;
 }
 
 
@@ -220,7 +219,6 @@ main {
 
     @media (max-width: 1130px) {
         animation: none;
-
     }
 }
 
@@ -229,6 +227,10 @@ main {
     border: #2a292c solid 1px;
     box-shadow: inset 0 0 15px 3px #2a292c;
     border-radius: 15px;
+
+    @media (max-width: 468px) {
+        padding: 2em 1em;
+    }
 }
 
 .social_media {
@@ -258,6 +260,13 @@ main {
     filter: brightness(0.8);
     box-shadow: 0 0 50px 10px #2a292c;
     transition: all 0.5s ease 0s, opacity 2s cubic-bezier(0.5, 0, 0, 1) 0s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;
+    min-height: 480px;
+    @media (max-width: 991px) {
+        filter: brightness(0.2);
+    }
+    @media (max-width: 499px) {
+        min-height: 650px;
+    }
 }
 
 .project_img:hover {
@@ -272,12 +281,20 @@ main {
     background: $background-dark-pallete;
     border-radius: 15px;
     margin-left: -120px;
+
+    @media (max-width: 991px) {
+        margin-left: 0;
+    }
 }
 
 .box_project_description2 {
     @extend .box_project_description;
     margin-left: 0;
     margin-right: -120px;
+
+    @media (max-width: 991px) {
+        margin-right: 0;
+    }
 }
 
 .link_project {
@@ -291,6 +308,14 @@ main {
 
 .cursor_pointer {
     cursor: pointer;
+}
+
+.project_description_mobile {
+    @media (max-width: 991px) {
+        position: absolute;
+        top: 10%;
+        left: 0;
+    }
 }
 
 .parallax {

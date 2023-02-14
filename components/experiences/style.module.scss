@@ -16,3 +16,11 @@
 .animation:hover::before {
     width: 100%;
 }
+
+.before_none {
+    box-shadow: none;
+}
+
+.before_none::before {
+    display: none;
+}

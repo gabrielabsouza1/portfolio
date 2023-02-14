@@ -150,7 +150,7 @@ export default function Home() {
                       <div className='box_project_description2 text-start'>
                         <p className='text_white f_size_18 l_height_30'>A photo gallery created as my first project using ReactJS, SASS, Pexels API and Axios</p>
                       </div>
-                      <div className="mt-4 d-flex justify-content-start justify-content-lg-end flex-wrap">
+                      <div className="mt-4 d-flex justify-content-start flex-wrap">
                         <p className='text_pink f_600 f_size_16 mx-2'>ReactJS</p>
                         <p className='text_pink f_600 f_size_16 mx-2'>SASS</p>
                         <p className='text_pink f_600 f_size_16 mx-2'>Axios</p>

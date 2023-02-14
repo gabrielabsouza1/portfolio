@@ -319,7 +319,7 @@ main {
     }
 }
 
-.parallax {
+/* .parallax {
     width: 100vw;
     height: 100vh;
     background: #2a292c;
@@ -338,7 +338,7 @@ main {
     top: 0;
     z-index: 90;
     animation: parallaxEffect 2.2s forwards;
-}
+} */
 
 @keyframes removeFilter {
     0% {
@@ -350,7 +350,7 @@ main {
     }
 }
 
-@keyframes parallaxEffect {
+/* @keyframes parallaxEffect {
     0% {
         transform: translateY(0);
     }
@@ -358,7 +358,7 @@ main {
     100% {
         transform: translateY(-100vh);
     }
-}
+} */
 
 @keyframes boucing-img {
     0% {

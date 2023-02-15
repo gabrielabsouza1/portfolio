@@ -11,8 +11,8 @@
         background: #eb176b;
         margin: 0 4px;
         box-shadow: 0 0 0 10px #eb176c5a,
-        0 0 50px #eb176b,
-        0 0 100px #eb176b;
+            0 0 50px #eb176b,
+            0 0 100px #eb176b;
         animation: animate 15s linear infinite;
         animation-duration: calc(350s / var(--i));
     }
@@ -21,8 +21,8 @@
         animation-delay: 0.5s;
         background: #7226d1;
         box-shadow: 0 0 0 10px #7226d1b1,
-        0 0 50px #7226d1,
-        0 0 100px #7226d1;
+            0 0 50px #7226d1,
+            0 0 100px #7226d1;
     }
 }
 
@@ -31,6 +31,7 @@
     0% {
         transform: translateY(4000px) scale(0)
     }
+
     100% {
         transform: translateY(-4000px) scale(1)
     }

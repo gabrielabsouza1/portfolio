@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as data from '../../public/data/navlinks.json';
 import styles from './style.module.scss';
 import Image from 'next/image';
+import { motion } from "framer-motion";
 const linksString = JSON.stringify(data);
 const links = JSON.parse(linksString).links;
 
@@ -10,6 +11,7 @@ type NavLink = {
     href: string;
 };
 
+
 const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
     const [open, setOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
@@ -17,6 +19,30 @@ const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
     const buttonHandler = (event: any) => {
         event.preventDefault();
         setOpen(!open);
+    };
+
+    const variants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3,
+            },
+        },
+    };
+
+    const linksAnimations = {
+        hidden: {
+            opacity: 0,
+            y: -30,
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1
+            },
+        },
     };
 
     useEffect(() => {
@@ -33,7 +59,9 @@ const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
             </div>
             <div className='position-relative'>
                 {isMobile &&
-                    (<div className={styles.list_links} style={open ? { maxHeight: 240 + 'px', visibility: 'visible' } : { maxHeight: 0, visibility: 'hidden' }}>
+                    (<div
+                        className={styles.list_links} 
+                        style={open ? { maxHeight: 240 + 'px', visibility: 'visible' } : { maxHeight: 0, visibility: 'hidden' }}>
                         {links.map((link: NavLink) => {
                             return (
                                 <div key={link.href} className={styles.link}>
@@ -46,17 +74,21 @@ const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
                     </div>)
                 }
                 {!isMobile &&
-                    (<div className={styles.list_links}>
+                    (<motion.div
+                        variants={variants}
+                        initial="hidden"
+                        animate="show"
+                        className={styles.list_links}>
                         {links.map((link: NavLink) => {
                             return (
-                                <div key={link.href} className={styles.link}>
+                                <motion.div variants={linksAnimations} key={link.href} className={styles.link}>
                                     <a href={link.href}>
                                         {link.label}
                                     </a>
-                                </div>
+                                </motion.div>
                             )
                         })}
-                    </div>)
+                    </motion.div>)
                 }
             </div>
         </div>

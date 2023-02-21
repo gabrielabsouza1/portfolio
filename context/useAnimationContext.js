@@ -53,6 +53,19 @@ export default function ContextApiAnimation({ children }) {
             },
         },
     };
+    const fadeLeft = {
+        hidden: {
+            opacity: 0,
+            x: -30,
+        },
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 1
+            },
+        },
+    };
     const fade = {
         hidden: {
             opacity: 0
@@ -71,7 +84,8 @@ export default function ContextApiAnimation({ children }) {
                 fadeDown,
                 fadeUp,
                 variants,
-                fadeRight
+                fadeRight,
+                fadeLeft
             }}
         >
             {children}
@@ -85,13 +99,15 @@ export function useAnimationContext() {
         fadeDown,
         fadeUp,
         variants,
-        fadeRight
+        fadeRight,
+        fadeLeft
     } = context;
     return {
         fade,
         fadeDown,
         fadeUp,
         variants,
-        fadeRight
+        fadeRight,
+        fadeLeft
     };
 }

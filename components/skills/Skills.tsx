@@ -58,7 +58,7 @@ const Skills: React.FC<{}> = () => {
                 <p className='text_white text-center' style={{ fontSize: 14 + 'px' }}>HTML / CSS</p>
               </div>
             </div>
-            <CircularProgress size={190} className='text_pink' variant='determinate' value={progress1} />
+            <CircularProgress size={190} style={{color: '#eb176b'}} variant='determinate' value={progress1} />
           </div>
           <div className='position-relative my-4 mx-md-5'>
             <div className={`${style.glow} ${style.color5}`}>

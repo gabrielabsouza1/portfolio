@@ -23,13 +23,12 @@ const Projects: React.FC<{}> = () => {
 
   }, [inView]);
   return (
-    <div>
+    <motion.div
+    ref={ref}
+    variants={variants}
+    animate={animation}>
       <h2 className="text_white hello_text pt-5 pb-5">Projects</h2>
-      <motion.div
-        ref={ref}
-        variants={variants}
-        animate={animation}
-        className='row align-items-center pb-5'>
+      <div className='row align-items-center pb-5'>
         <motion.div variants={fadeLeft} className="col-lg-6 px-3 mb-4 mb-md-0">
           <a href="https://leadster.com.br/" rel='noreferrer' target={'_blank'}>
             <Image width={688} height={480} src="/img/leadster.png" className='img-fluid project_img' alt="" />
@@ -55,12 +54,8 @@ const Projects: React.FC<{}> = () => {
             </a>
           </div>
         </motion.div>
-      </motion.div>
-      <motion.div
-        ref={ref}
-        variants={variants}
-        animate={animation}
-        className='row align-items-center justify-content-end flex-row-reverse pt-5 mt-lg-5'>
+      </div>
+      <div className='row align-items-center justify-content-end flex-row-reverse pt-5 mt-lg-5'>
         <motion.div variants={fadeLeft} className="col-lg-6 px-3 mb-4 mb-md-0">
           <a href="https://gallery-blue.vercel.app/" rel='noreferrer' target={'_blank'}>
             <Image width={688} height={480} src="/img/gallery.png" className='img-fluid project_img' alt="" />
@@ -90,8 +85,8 @@ const Projects: React.FC<{}> = () => {
             </a>
           </div>
         </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   )
 }
 

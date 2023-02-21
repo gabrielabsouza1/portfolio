@@ -4,6 +4,9 @@ In this project we used the following technologies
 
 * NextJS version ^13.0.0
 * ReactJS version ^18.2.0
+* Typescript version ^4.9.4
+* Bootstrap version ^5.2.0
+* Material UI version ^5.11.8
 
 ## Project installation
 Before downloading the repository you need to have some programs installed on your computer, which are:

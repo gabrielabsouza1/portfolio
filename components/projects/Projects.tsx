@@ -9,7 +9,7 @@ import { useAnimationContext } from '../../context/useAnimationContext'
 const Projects: React.FC<{}> = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: '0px 0px',
+    rootMargin: '50px 0px',
   })
   const animation = useAnimation();
   const { variants, fadeLeft, fadeRight } = useAnimationContext();

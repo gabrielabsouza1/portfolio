@@ -142,7 +142,7 @@ export default function Home() {
               <div className='container-fluid py-lg-5 pe-lg-0 bg_palette2'>
                 <div id='projects' className='anchor px-lg-5 pt-4'>
                   <div className='grid_layout pb-5'>
-                    <Projects/>
+                  <Projects/>
                   </div>
                 </div>
               </div>
@@ -151,8 +151,6 @@ export default function Home() {
           </PageWrapper>
         </section>
       </Bubbles>
-      <div className='parallax'></div>
-      <div className='parallax_color'></div>
     </>
   )
 }

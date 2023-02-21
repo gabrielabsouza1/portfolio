@@ -15,60 +15,13 @@ import Head from 'next/head';
 import { motion, useAnimation } from "framer-motion";
 import { PageWrapper } from 'components/page-wrapper/PageWrapper';
 import { useInView } from 'react-intersection-observer';
+import { useAnimationContext } from '../context/useAnimationContext'
 
 export default function Home() {
   const [isMobile, setisMobile] = useState(false)
   const { ref, inView } = useInView();
   const animation = useAnimation();
-
-  const variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const fadeUp = {
-    hidden: {
-      opacity: 0,
-      y: -30,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1
-      },
-    },
-  };
-  
-  const fadeDown = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1
-      },
-    },
-  };
-  const fade = {
-    hidden: {
-      opacity: 0
-    },
-    show: {
-      opacity: 1,
-      transition: {
-        duration: 1
-      },
-    },
-  };
+  const { variants, fadeUp, fadeDown, fade } = useAnimationContext();
 
   useEffect(() => {
     if (window.screen.width <= 991) {

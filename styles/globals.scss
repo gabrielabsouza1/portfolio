@@ -1,9 +1,9 @@
 @import './fonts.scss';
 
-$pink-pallete: #eb176b;
-$purple-pallete: #7226d1;
-$cian-pallete: #31ffe2;
-$background-dark-pallete: #222123;
+$pink-pallete: rgb(235, 23, 107);
+$purple-pallete: rgb(114, 38, 209);
+$cian-pallete: rgb(49, 255, 226);
+$background-dark-pallete: rgb(34, 33, 35);
 
 :root {
     --margin-text-animation: -4.02rem;
@@ -61,7 +61,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .background_dark {
-    background-color: $background-dark-pallete;
+    background-color: $background-dark-pallete !important;
 }
 
 main {

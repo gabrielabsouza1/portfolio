@@ -3,6 +3,7 @@ import * as data from '../../public/data/navlinks.json';
 import styles from './style.module.scss';
 import Image from 'next/image';
 import { motion } from "framer-motion";
+import { useAnimationContext } from 'context/useAnimationContext';
 const linksString = JSON.stringify(data);
 const links = JSON.parse(linksString).links;
 
@@ -15,34 +16,11 @@ type NavLink = {
 const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
     const [open, setOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const { variants, fadeUp } = useAnimationContext();
 
     const buttonHandler = (event: any) => {
         event.preventDefault();
         setOpen(!open);
-    };
-
-    const variants = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.3,
-            },
-        },
-    };
-
-    const linksAnimations = {
-        hidden: {
-            opacity: 0,
-            y: -30,
-        },
-        show: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 1
-            },
-        },
     };
 
     useEffect(() => {
@@ -81,7 +59,7 @@ const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
                         className={styles.list_links}>
                         {links.map((link: NavLink) => {
                             return (
-                                <motion.div variants={linksAnimations} key={link.href} className={styles.link}>
+                                <motion.div variants={fadeUp} key={link.href} className={styles.link}>
                                     <a href={link.href}>
                                         {link.label}
                                     </a>

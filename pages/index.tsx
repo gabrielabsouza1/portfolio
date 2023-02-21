@@ -60,7 +60,7 @@ export default function Home() {
                 <motion.div
                   variants={variants}
                   initial="hidden"
-                  animate="show"
+                  animate="show" 
                   className="d-flex align-items-center justify-content-between height_header flex-wrap">
                   <motion.div variants={fadeDown} className='col-xl-6 col-xxl-5 ps-2 ps-sm-5 box_name'>
                     <h1 className="text_white hello_text">Hello, i'm</h1>
@@ -69,17 +69,9 @@ export default function Home() {
                       <div className="second"><div>Web Developer</div></div>
                     </div>
                   </motion.div>
-                  {isMobile ? (
-                    <motion.div variants={fade} className='img_header_visibility col-sm-10 col-xl-6 col-xxl-7 px-0' >
-                      <img width={1082} height={1027} src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
-                    </motion.div>
-                  )
-                    :
-                    (
-                      <div className='img_header_visibility col-sm-10 col-xl-6 col-xxl-7 px-0' >
-                        <Image priority width={1082} height={1027} src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
-                      </div>
-                    )}
+                  <motion.div variants={fade} className='img_header_visibility col-sm-10 col-xl-6 col-xxl-7 px-0' >
+                    <img width={1082} height={1027} src="/img/header-teste2.png" className='img-fluid bouncing_img' alt="" />
+                  </motion.div>
                 </motion.div>
 
                 <div id='about' className='anchor px-lg-5 pb-5 pt-5'>
@@ -150,7 +142,7 @@ export default function Home() {
               <div className='container-fluid py-lg-5 pe-lg-0 bg_palette2'>
                 <div id='projects' className='anchor px-lg-5 pt-4'>
                   <div className='grid_layout pb-5'>
-                    <Projects />
+                    <Projects/>
                   </div>
                 </div>
               </div>

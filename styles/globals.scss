@@ -56,7 +56,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #eb176b;
+    background-color: rgb(235, 23, 107);
     border-radius: 3px;
 }
 
@@ -255,15 +255,6 @@ main {
     filter: brightness(0.8);
     box-shadow: 0 0 50px 10px #2a292c;
     transition: all 0.5s ease 0s, opacity 2s cubic-bezier(0.5, 0, 0, 1) 0s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;
-    min-height: 480px;
-
-    @media (max-width: 991px) {
-        filter: brightness(0.2);
-    }
-
-    @media (max-width: 499px) {
-        min-height: 650px;
-    }
 }
 
 .project_img:hover {
@@ -281,6 +272,10 @@ main {
 
     @media (max-width: 991px) {
         margin-left: 0;
+    }
+
+    @media (max-width: 424px) {
+        padding: 2em 1em;
     }
 }
 
@@ -307,37 +302,6 @@ main {
     cursor: pointer;
 }
 
-.project_description_mobile {
-    z-index: 2;
-
-    @media (max-width: 991px) {
-        position: absolute;
-        top: 10%;
-        left: 0;
-    }
-}
-
-/* .parallax {
-    width: 100vw;
-    height: 100vh;
-    background: #2a292c;
-    position: absolute;
-    padding-top: 200px;
-    top: 0;
-    z-index: 100;
-    animation: parallaxEffect 2s forwards;
-}
-
-.parallax_color {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(90deg, rgba(235, 23, 107, 1) 0%, rgba(114, 38, 209, 1) 50%, rgba(49, 255, 226, 1) 100%);
-    position: absolute;
-    top: 0;
-    z-index: 90;
-    animation: parallaxEffect 2.2s forwards;
-} */
-
 @keyframes removeFilter {
     0% {
         transform: translateY(0);
@@ -347,16 +311,6 @@ main {
         transform: translateY(-100%);
     }
 }
-
-/* @keyframes parallaxEffect {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-100vh);
-    }
-} */
 
 @keyframes boucing-img {
     0% {

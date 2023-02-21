@@ -145,14 +145,14 @@ export default function Home() {
                 <div id='projects' className='anchor px-lg-5 pt-4'>
                   <div className='grid_layout pb-5'>
                     <h2 className="text_white hello_text pt-5 pb-5">Projects</h2>
-                    <div className='row align-items-center position-relative pb-5'>
-                      <div className="col-lg-6">
+                    <div className='row align-items-center pb-5'>
+                      <div className="col-lg-6 px-3 mb-4 mb-md-0">
                         <a href="https://leadster.com.br/" rel='noreferrer' target={'_blank'}>
                           <Image width={688} height={480} src="/img/leadster.png" className='img-fluid project_img' alt="" />
                         </a>
                       </div>
-                      <div className="col-lg-5 project_description_mobile px-4 px-sm-5 pe-lg-4 ">
-                        <div className='text-lg-end mb-5 ms-2 ms-lg-0 me-lg-2'>
+                      <div className="col-lg-5 px-3 px-md-5 pe-lg-4 position-relative" style={{zIndex: 2}}>
+                        <div className='text-lg-end mb-4 mb-md-5 ms-2 ms-lg-0 me-lg-2'>
                           <p className='text_pink f_600 f_size_18'>Featured Project</p>
                           <h2 className='text_white f_600'>Leadster Website</h2>
                         </div>
@@ -172,14 +172,14 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className='row align-items-center position-relative justify-content-end flex-row-reverse pt-5 mt-lg-5'>
-                      <div className="col-lg-6">
+                    <div className='row align-items-center justify-content-end flex-row-reverse pt-5 mt-lg-5'>
+                      <div className="col-lg-6 px-3 mb-4 mb-md-0">
                         <a href="https://gallery-blue.vercel.app/" rel='noreferrer' target={'_blank'}>
                           <Image width={688} height={480} src="/img/gallery.png" className='img-fluid project_img' alt="" />
                         </a>
                       </div>
-                      <div className="col-lg-5 project_description_mobile px-4 px-sm-5 pe-lg-4">
-                        <div className='text-start mb-5 ms-lg-2 pt-4 pt-sm-5 ms-2'>
+                      <div className="col-lg-5 px-3 px-md-5 pe-lg-4 position-relative" style={{zIndex: 2}}>
+                        <div className='text-start mb-4 mb-md-5 ms-lg-2 pt-4 pt-sm-5 ms-2'>
                           <p className='text_pink f_600 f_size_18'>Featured Project</p>
                           <h2 className='text_white f_600'>Gallery</h2>
                         </div>

@@ -89,14 +89,12 @@ export default function Home() {
                         <motion.p variants={fadeUp} className='text_pink f_size_16em f_600 mb-2'>About me</motion.p>
                         <motion.h3 variants={fadeUp} className='f_size_24em text_white mb-4'>Gabriela Souza</motion.h3>
                         <motion.p variants={fadeUp} className='text_white f_size_18 f_600'>Front End Developer</motion.p>
-                        <motion.p variants={fadeUp} className='text_white f_size_18 l_height_30'>Hello! My name is Gabriela and I'm a developer who made her career migration in 2021. After I graduated in Gastronomy (2021) I started
-                          learning about IT and became passionate about technology.
-                          <br />
-                          I'm constantly studying new frameworks, improving my
-                          knowledge and refining my skills. I'm very good at communicating with people, working in groups and I'm always
-                          ready to face a challenge.
-                          <br /><br />
-                          Currently based in Melbourne, VIC, Australia
+                        <motion.p variants={fadeUp} className='text_white f_size_18 l_height_30'>I’m Gabriela Souza, a Junior Front-End Developer based in Melbourne, Australia. 
+                          I have professional experience maintaining and optimizing websites and web applications using <strong>HTML, CSS, JavaScript (ES6+), React, Next.js and TypeScript</strong>. 
+                          <br/>
+                          In my previous role, I contributed to the migration of legacy static pages to <strong>React/Next.js</strong>, improved responsiveness across devices, and supported performance initiatives focused on <strong>Core Web Vitals</strong> and page speed. 
+                          <br/>
+                          I’m currently completing a <strong>Master of Information Technology (Web & Mobile Development)</strong>, strengthening my foundation in front-end engineering, Agile ways of working, and scalable web solutions. I’m looking for a role where I can collaborate closely with designers and developers, deliver polished interfaces, and keep growing as an engineer.
                         </motion.p>
                         <div className="d-flex align-items-center justify-content-start flex-wrap mt-4">
                           <motion.div variants={fade} className="social_media mt-3">

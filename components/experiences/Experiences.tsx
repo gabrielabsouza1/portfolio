@@ -44,10 +44,6 @@ const Experiences: React.FC<{}> = () => {
             <h3 className={activeNavItem.showCNB ? 'f_size_20 f_700 mb-0 text_pink' : 'text_white f_size_20 mb-0'}>Casa do Nobreak</h3>
             {activeNavItem.showCNB && <img src="/img/right-arrow2.png" className='img-fluid' alt="" />}
           </motion.div>
-          <motion.div variants={fadeUp} className={activeNavItem.showSanti ? `${style.animation} d-flex justify-content-between align-items-center cursor_pointer mb-4` : `${style.animation} cursor_pointer mb-4`} onClick={() => setActiveNavItem(activeNavItem => ({ ...navExperiences, showSanti: true, showLeadster: false }))}>
-            <h3 className={activeNavItem.showSanti ? 'f_size_20 f_700 mb-0 text_pink' : 'text_white f_size_20 mb-0'}>Santi Pizzeria</h3>
-            {activeNavItem.showSanti && <img src="/img/right-arrow2.png" className='img-fluid' alt="" />}
-          </motion.div>
         </div>
       </motion.div>
       <div
@@ -59,7 +55,7 @@ const Experiences: React.FC<{}> = () => {
             animate="show">
             <motion.div variants={fadeRight} className='d-flex justify-content-between align-items-baseline'>
               <h3 className='f_size_24em text_white mb-2'>Front End Developer</h3>
-              <p className='text_white f_size_18'>Jan 2022 - currently</p>
+              <p className='text_white f_size_18'>Jan 2022 - 2024</p>
             </motion.div>
             <motion.p variants={fadeRight} className='text_pink f_size_16em f_600 mb-4'>Leadster</motion.p>
             <motion.p variants={fadeRight} className='text_white f_size_18 f_600'>Brazil</motion.p>
@@ -91,24 +87,6 @@ const Experiences: React.FC<{}> = () => {
               ● Customer Service
               <br />
               ● Website maintenance with HTML e CSS
-            </motion.p>
-          </motion.div>
-        }
-        {activeNavItem.showSanti &&
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="show">
-            <motion.div variants={fadeRight} className='d-flex justify-content-between align-items-baseline'>
-              <h3 className='f_size_24em text_white mb-2'>Kitchen Staff</h3>
-              <p className='text_white f_size_18'>May 2019 - Dec 2020</p>
-            </motion.div>
-            <motion.p variants={fadeRight} className='text_pink f_size_16em f_600 mb-4'>Santi Pizzeria</motion.p>
-            <motion.p variants={fadeRight} className='text_white f_size_18 f_600'>Brazil</motion.p>
-            <motion.p variants={fadeRight} className='text_white f_size_18 l_height_45'>
-              ● Customer Service focused on providing an excellent experience for the client
-              <br />
-              ● Good team work skills
             </motion.p>
           </motion.div>
         }

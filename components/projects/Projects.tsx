@@ -28,7 +28,38 @@ const Projects: React.FC<{}> = () => {
     variants={variants}
     animate={animation}>
       <h2 className="text_white hello_text pt-5 pb-5">Projects</h2>
-      <div className='row align-items-center pb-5'>
+      <div className='row align-items-center justify-content-end flex-row-reverse pb-5 mt-lg-5 mb-5'>
+        <motion.div variants={fadeLeft} className="col-lg-3 px-3 mb-4 mb-md-0">
+          <a href="https://gallery-blue.vercel.app/" rel='noreferrer' target={'_blank'}>
+            <Image width={325} height={480} src="/img/emp_management_project.png" className='img-fluid project_img' alt="" />
+          </a>
+        </motion.div>
+        <motion.div variants={fadeRight} className="col-lg-8 px-3 px-md-5 pe-lg-4 position-relative" style={{ zIndex: 2 }}>
+          <div className='text-start mb-4 mb-md-5 ms-lg-2 pt-4 pt-sm-5 ms-2'>
+            <p className='text_pink f_600 f_size_18'>Featured Project</p>
+            <h2 className='text_white f_600'>Employee Management System (Android - Kotlin)</h2>
+          </div>
+          <div className='box_project_description2 text-start'>
+            <p className='text_white f_size_18 l_height_30'>Native Android application developed in Kotlin implementing full CRUD operations with Room database persistence. Designed with RecyclerView, multiple activities/fragments, and MVVM architecture to ensure scalable and maintainable code structure.</p>
+          </div>
+          <div className="mt-4 d-flex justify-content-start flex-wrap">
+            <p className='text_pink f_600 f_size_16 mx-2'>Kotlin</p>
+            <p className='text_pink f_600 f_size_16 mx-2'>Android Studio</p>
+            <p className='text_pink f_600 f_size_16 mx-2'>RecyclerView</p>
+            <p className='text_pink f_600 f_size_16 mx-2'>Room Database</p>
+            <p className='text_pink f_600 f_size_16 mx-2'>MVVM Architecture</p>
+          </div>
+          <div className="text-start d-flex">
+            <a href="https://gallery-blue.vercel.app/" className='mx-2' rel='noreferrer' target={'_blank'}>
+              <FiExternalLink size={'25px'} className='me-lg-2 link_project' />
+            </a>
+            <a href="https://github.com/gabrielabsouza1/gallery" className='mx-2' rel='noreferrer' target={'_blank'}>
+              <FiGithub size={'25px'} className='me-lg-2 link_project' />
+            </a>
+          </div>
+        </motion.div>
+      </div>
+      <div className='row align-items-center pb-5 pt-5'>
         <motion.div variants={fadeLeft} className="col-lg-6 px-3 mb-4 mb-md-0">
           <a href="https://leadster.com.br/" rel='noreferrer' target={'_blank'}>
             <Image width={688} height={480} src="/img/leadster.png" className='img-fluid project_img' alt="" />

@@ -34,7 +34,7 @@ const Projects: React.FC<{}> = () => {
             <Image width={325} height={480} src="/img/emp_management_project.png" className='img-fluid project_img' alt="" />
           </a>
         </motion.div>
-        <motion.div variants={fadeRight} className="col-lg-8 px-3 px-md-5 pe-lg-4 position-relative" style={{ zIndex: 2 }}>
+        <motion.div variants={fadeRight} className="col-lg-8 px-3 pe-md-5 pe-lg-4 position-relative" style={{ zIndex: 2 }}>
           <div className='text-start mb-4 mb-md-5 ms-lg-2 pt-4 pt-sm-5 ms-2'>
             <p className='text_pink f_600 f_size_18'>Featured Project</p>
             <h2 className='text_white f_600'>Employee Management System (Android - Kotlin)</h2>

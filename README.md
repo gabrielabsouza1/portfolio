@@ -1,41 +1,45 @@
-## Technologies
+# Gabriela Souza — Portfolio
 
-In this project we used the following technologies
+Personal site of [Gabriela Souza](https://www.linkedin.com/in/gabriela-souza-744a141b0/), a Full-Stack Software Developer based in Melbourne, Australia.
 
-* NextJS version ^13.0.0
-* ReactJS version ^18.2.0
-* Typescript version ^4.9.4
-* Bootstrap version ^5.2.0
-* Material UI version ^5.11.8
+**Live:** [portfolio-gabriela.vercel.app](https://portfolio-gabriela.vercel.app/)
 
-## Project installation
-Before downloading the repository you need to have some programs installed on your computer, which are:
-* [Node](https://nodejs.org/en/download/)
-* [Git](https://git-scm.com/download/win)
+The site covers About, Experience, Projects, Skills and Contact, with an interactive Three.js hero on desktop and a compact, text-first layout on mobile.
 
-To download the repository, choose a folder in your computer, open the terminal and execute:
+## Stack
+
+- [Next.js](https://nextjs.org/) 16 (Pages Router)
+- [React](https://react.dev/) 19
+- [TypeScript](https://www.typescriptlang.org/) 5.9
+- [Three.js](https://threejs.org/) + [React Three Fiber](https://r3f.docs.pmnd.rs/) + [Drei](https://drei.docs.pmnd.rs/)
+- [Framer Motion](https://www.framer.com/motion/)
+- Sass modules
+- Material UI 5
+
+Requires **Node.js 20.9+**.
+
+## Getting started
 
 ```bash
-git clone https://github.com/neurologicai/leadster.com.br.git
-```
-
-After download the repository in your computer, execute the folloing commands:
-
-```bash
-npm i
-# ou
+git clone https://github.com/gabrielabsouza1/portfolio.git
+cd portfolio
 npm install
-```
-
-After the packeges installation, execute:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the project.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Get to know more
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Learn Next.js](https://nextjs.org/learn) - Tutorial interativo.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript (`tsc --noEmit`) |
+
+## Links
+
+- [GitHub](https://github.com/gabrielabsouza1)
+- [LinkedIn](https://www.linkedin.com/in/gabriela-souza-744a141b0/)

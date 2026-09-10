@@ -25,9 +25,6 @@ export default function Home() {
         <meta property="og:url" content={SITE.url} />
         <meta property="og:description" content={SITE.metaDescription} />
       </Head>
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
       <div id="top">
         <header>
           <Navbar />

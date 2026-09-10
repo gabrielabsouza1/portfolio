@@ -56,3 +56,11 @@
     line-height: 0.95;
     text-transform: uppercase;
 }
+
+.description {
+    margin: 1.25rem 0 0;
+    max-width: 38rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}

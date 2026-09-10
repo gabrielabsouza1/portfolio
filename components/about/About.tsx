@@ -28,9 +28,10 @@ const About: React.FC = () => {
           <div className={styles.portrait}>
             <Image
               src="/img/me2.png"
-              alt={SITE.name}
-              width={431}
-              height={431}
+              alt={`Portrait of ${SITE.name}`}
+              width={1024}
+              height={1024}
+              sizes="(min-width: 900px) 360px, 80vw"
             />
           </div>
           <aside className={styles.education}>

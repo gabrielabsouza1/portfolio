@@ -16,6 +16,7 @@ export type FeaturedProject = {
   sourceUrl?: string;
   sourceLabel?: string;
   reverse?: boolean;
+  lockMedia?: boolean;
   visual: "jobcompass" | "coreguard";
 };
 
@@ -26,6 +27,8 @@ export type MoreProject = {
   technologies: readonly string[];
   image: string;
   imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
   liveUrl?: string;
   sourceUrl?: string;
 };
@@ -63,8 +66,9 @@ export const featuredProjects: readonly FeaturedProject[] = [
     ],
     liveUrl: "https://job-compass-snowy.vercel.app/",
     liveLabel: "Live project",
-    // Provide the JobCompass GitHub URL to enable the Source Code link.
+    sourceUrl: "https://github.com/gabrielabsouza1/JobCompass",
     sourceLabel: "Source code",
+    lockMedia: true,
     visual: "jobcompass",
   },
   {
@@ -109,6 +113,8 @@ export const moreProjects: readonly MoreProject[] = [
     ],
     image: "/img/emp_management_project.png",
     imageAlt: "Employee Management System Android app screens",
+    imageWidth: 506,
+    imageHeight: 976,
   },
   {
     id: "gallery",
@@ -118,6 +124,8 @@ export const moreProjects: readonly MoreProject[] = [
     technologies: ["ReactJS", "SASS", "Axios", "React Context", "React Hooks"],
     image: "/img/gallery.png",
     imageAlt: "Gallery project interface",
+    imageWidth: 1185,
+    imageHeight: 771,
     liveUrl: "https://gallery-blue.vercel.app/",
     sourceUrl: "https://github.com/gabrielabsouza1/gallery",
   },

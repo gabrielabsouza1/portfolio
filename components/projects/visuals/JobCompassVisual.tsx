@@ -19,6 +19,7 @@ const JobCompassVisual: React.FC = () => {
           width={1024}
           height={703}
           sizes="(min-width: 1024px) 48vw, 100vw"
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
     </div>

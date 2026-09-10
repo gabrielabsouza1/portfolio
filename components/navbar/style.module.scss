@@ -100,6 +100,21 @@
     }
 }
 
+.resume {
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--accent);
+        text-decoration: none;
+    }
+}
+
 .toggle {
     display: inline-flex;
     flex-direction: column;
@@ -184,6 +199,10 @@
         &:hover {
             color: var(--accent);
             text-decoration: none;
+        }
+
+        &:focus-visible {
+            color: var(--accent);
         }
     }
 }

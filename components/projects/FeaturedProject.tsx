@@ -26,12 +26,13 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
   sourceUrl,
   sourceLabel = "Source code",
   reverse = false,
+  lockMedia = false,
   visual,
 }) => {
   const reduceMotion = useReducedMotion();
   const isMobile = useIsMobile(1023);
   const mediaRef = useRef<HTMLDivElement>(null);
-  const allowTilt = !reduceMotion && !isMobile;
+  const allowTilt = !lockMedia && !reduceMotion && !isMobile;
 
   const resetTilt = useCallback(() => {
     const media = mediaRef.current;
@@ -70,7 +71,7 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
       >
         <div
           ref={mediaRef}
-          className={styles.media}
+          className={`${styles.media} ${lockMedia ? styles.mediaStatic : ""}`.trim()}
           onMouseMove={onPointerMove}
           onMouseLeave={resetTilt}
         >

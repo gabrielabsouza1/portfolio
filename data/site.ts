@@ -10,8 +10,11 @@ export const SITE = {
   url: "https://portfolio-gabriela.vercel.app/",
   github: "https://github.com/gabrielabsouza1",
   linkedin: "https://www.linkedin.com/in/gabriela-souza-744a141b0/",
+  email: "gabigabrielabs@hotmail.com",
+  cv: "/CV_Gabriela_Full_Stack.pdf",
+  ogImage: "/img/meta_image.png",
   metaDescription:
-    "Gabriela Souza is a Full-Stack Software Developer based in Melbourne, Australia, building modern web applications with React, Next.js, TypeScript, Python and PostgreSQL.",
+    "Full-Stack Software Developer based in Melbourne, building modern web applications with React, Next.js, TypeScript, Python, APIs and cloud technologies.",
 } as const;
 
 export const HERO_TECH = [

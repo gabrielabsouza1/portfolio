@@ -11,6 +11,8 @@ const MoreProjectCard: React.FC<MoreProjectCardProps> = ({
   technologies,
   image,
   imageAlt,
+  imageWidth,
+  imageHeight,
   liveUrl,
   sourceUrl,
 }) => {
@@ -18,7 +20,14 @@ const MoreProjectCard: React.FC<MoreProjectCardProps> = ({
     <Reveal>
       <article className={styles.moreCard}>
         <div className={styles.moreMedia}>
-          <Image src={image} alt={imageAlt} width={688} height={430} />
+          <Image
+            src={image}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+            sizes="(min-width: 800px) 40vw, 100vw"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
         </div>
         <div className={styles.moreBody}>
           <h4 className={styles.moreTitle}>{title}</h4>

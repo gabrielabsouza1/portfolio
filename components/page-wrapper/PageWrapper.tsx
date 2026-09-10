@@ -1,16 +1,17 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
-export const PageWrapper: React.FC<{children: any}> = ({children}) => (
-  <>
+export const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const reduceMotion = useReducedMotion();
+
+  return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0, y: 15 }}
+        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 15 }}
-        transition={{ delay: 0.25 }}
+        transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }}
       >
         {children}
       </motion.div>
     </AnimatePresence>
-  </>
-);
+  );
+};

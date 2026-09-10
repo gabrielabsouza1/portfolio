@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from "react-intersection-observer";
 import { FiExternalLink } from "@react-icons/all-files/fi/FiExternalLink";
 import { FiGithub } from "@react-icons/all-files/fi/FiGithub";
@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { motion, useAnimation } from "framer-motion";
 import { useAnimationContext } from '../../context/useAnimationContext'
 
-const Projects: React.FC<{}> = () => {
+const Projects: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: '50px 0px',
@@ -27,8 +27,7 @@ const Projects: React.FC<{}> = () => {
     ref={ref}
     variants={variants}
     animate={animation}>
-      <h2 className="text_white hello_text pt-5 pb-5">Projects</h2>
-      <div className='row align-items-center justify-content-end flex-row-reverse pb-5 mt-lg-5 mb-5'>
+      <div className='row align-items-center justify-content-end flex-row-reverse pb-5 mb-5'>
         <motion.div variants={fadeLeft} className="col-lg-3 px-3 mb-4 mb-md-0">
           <a href="https://gallery-blue.vercel.app/" rel='noreferrer' target={'_blank'}>
             <Image width={325} height={480} src="/img/emp_management_project.png" className='img-fluid project_img' alt="" />

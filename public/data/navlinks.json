@@ -5,16 +5,20 @@
             "href": "#about"
         },
         {
-            "label": "Experiences",
+            "label": "Experience",
             "href": "#experiences"
+        },
+        {
+            "label": "Projects",
+            "href": "#projects"
         },
         {
             "label": "Skills",
             "href": "#skills"
         },
         {
-            "label": "Projects",
-            "href": "#projects"
+            "label": "Contact",
+            "href": "#contact"
         }
     ]
 }

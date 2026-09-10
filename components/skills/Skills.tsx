@@ -3,7 +3,7 @@ import style from './style.module.scss';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useInView } from "react-intersection-observer";
 
-const Skills: React.FC<{}> = () => {
+const Skills: React.FC = () => {
   const [progress1, setProgress1] = useState(0);
   const [progress2, setProgress2] = useState(0);
   const [progress3, setProgress3] = useState(0);
@@ -42,14 +42,13 @@ const Skills: React.FC<{}> = () => {
     }
   }
   useEffect(() => {
-    inView && progressAnimation()
+    if (inView) {
+      progressAnimation()
+    }
 
   }, [inView]);
   return (
-    <div id='skills' className='anchor container-fluid pb-lg-4 ps-lg-5 pe-lg-0 bg_palette1'>
-      <div className='grid_layout mb-5'>
-        <h2 className="text_white hello_text pt-5 pb-lg-5 pb-3">Skills</h2>
-        <div ref={ref} className='d-flex align-items-center justify-content-center flex-wrap'>
+    <div ref={ref} className='d-flex align-items-center justify-content-center flex-wrap'>
           <div className='position-relative my-4 me-lg-5'>
             <div className={`${style.glow} ${style.color1}`}>
               <div className={style.glow_inner}></div>
@@ -101,9 +100,6 @@ const Skills: React.FC<{}> = () => {
             <CircularProgress size={190} style={{color: '#2ee072'}} variant='determinate' value={progress5} />
           </div>
         </div>
-      </div>
-    </div>
-
   )
 }
 

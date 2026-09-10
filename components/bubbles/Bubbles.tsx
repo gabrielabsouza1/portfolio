@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './style.module.scss';
 
-const Bubbles: React.FC<{children: any}> = ({children}) => {
+const Bubbles: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className='container-fluid overflow_hidden px-0 position-relative' style={{zIndex: 2}}>

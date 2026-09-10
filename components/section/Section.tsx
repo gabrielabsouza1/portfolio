@@ -8,6 +8,7 @@ type SectionProps = {
   children: React.ReactNode;
   tone?: "primary" | "secondary";
   titleAs?: "h2" | "p";
+  description?: string;
 };
 
 const Section: React.FC<SectionProps> = ({
@@ -18,6 +19,7 @@ const Section: React.FC<SectionProps> = ({
   children,
   tone = "primary",
   titleAs = "h2",
+  description,
 }) => {
   const TitleTag = titleAs;
 
@@ -37,6 +39,7 @@ const Section: React.FC<SectionProps> = ({
           <TitleTag id={`${id}-title`} className={styles.title}>
             {title}
           </TitleTag>
+          {description ? <p className={styles.description}>{description}</p> : null}
         </header>
         {children}
       </div>

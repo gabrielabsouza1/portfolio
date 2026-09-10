@@ -2,7 +2,6 @@ import Head from "next/head";
 import About from "components/about/About";
 import Contact from "components/contact/Contact";
 import Experiences from "components/experiences/Experiences";
-import ExperiencesMobile from "components/experiences/ExperiencesMobile";
 import Hero from "components/hero/Hero";
 import Navbar from "components/navbar/Navbar";
 import { PageWrapper } from "components/page-wrapper/PageWrapper";
@@ -10,11 +9,8 @@ import Projects from "components/projects/Projects";
 import Section from "components/section/Section";
 import Skills from "components/skills/Skills";
 import { SITE } from "data/site";
-import { useIsMobile } from "hooks/useIsMobile";
 
 export default function Home() {
-  const isMobile = useIsMobile();
-
   return (
     <>
       <Head>
@@ -45,14 +41,28 @@ export default function Home() {
               number="02"
               label="Experience"
               title="Experience"
+              description="Building web products across front-end, back-end and modern web technologies."
               tone="secondary"
             >
-              {isMobile ? <ExperiencesMobile /> : <Experiences />}
+              <Experiences />
             </Section>
-            <Section id="projects" number="03" label="Projects" title="Projects">
+            <Section
+              id="projects"
+              number="03"
+              label="Projects"
+              title="Selected work"
+              description="A selection of products and tools I've built across web, backend and systems development."
+            >
               <Projects />
             </Section>
-            <Section id="skills" number="04" label="Skills" title="Skills" tone="secondary">
+            <Section
+              id="skills"
+              number="04"
+              label="Skills"
+              title="Technologies I work with"
+              description="From interfaces and APIs to databases, testing and cloud deployment."
+              tone="secondary"
+            >
               <Skills />
             </Section>
             <Contact />

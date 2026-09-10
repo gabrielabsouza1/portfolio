@@ -1,0 +1,147 @@
+.browser,
+.monitor {
+    height: 100%;
+    min-height: 280px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 42%),
+        var(--bg-alt);
+    overflow: hidden;
+}
+
+.browser {
+    display: flex;
+    flex-direction: column;
+}
+
+.chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.dots {
+    display: flex;
+    gap: 0.35rem;
+
+    i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+
+        &:first-child {
+            background: rgba(255, 93, 154, 0.7);
+        }
+    }
+}
+
+.url {
+    flex: 1;
+    padding: 0.28rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.screenshot {
+    min-height: 0;
+    background: #f4f7f6;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.monitor {
+    display: grid;
+    align-content: center;
+    gap: 1.15rem;
+    padding: 1.4rem 1.35rem 1.5rem;
+}
+
+.monitorKicker,
+.score span,
+.metrics dt,
+.status {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-subtle);
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    strong {
+        color: var(--text);
+        font-size: clamp(3.4rem, 8vw, 5.2rem);
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        line-height: 0.9;
+    }
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 0;
+
+    div {
+        padding: 0.7rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    dt {
+        margin: 0 0 0.35rem;
+    }
+
+    dd {
+        margin: 0;
+        color: var(--text);
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+    }
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid rgba(255, 93, 154, 0.28);
+    border-radius: 12px;
+    background: var(--accent-soft);
+
+    b {
+        color: var(--accent);
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+    }
+}
+
+@media (max-width: 520px) {
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+}

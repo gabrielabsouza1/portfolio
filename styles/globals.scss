@@ -110,76 +110,8 @@ body::-webkit-scrollbar-thumb {
     background: var(--bg-alt);
 }
 
-.skills_card {
-    border: $pink-pallete solid 2px;
-    border-radius: 15px;
-    height: 400px;
-    width: 230px;
-}
-
-.project_img {
-    border-radius: 7px;
-    filter: brightness(0.8);
-    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.35);
-    transition: filter 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.project_img:hover {
-    filter: none;
-    transform: scale(1.015);
-}
-
-.box_project_description {
-    padding: 3em;
-    border: var(--border) solid 1px;
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.25);
-    background: var(--bg);
-    border-radius: 15px;
-    margin-left: -120px;
-
-    @media (max-width: 991px) {
-        margin-left: 0;
-    }
-
-    @media (max-width: 424px) {
-        padding: 2em 1em;
-    }
-}
-
-.box_project_description2 {
-    @extend .box_project_description;
-    margin-left: 0;
-    margin-right: -120px;
-
-    @media (max-width: 991px) {
-        margin-right: 0;
-    }
-}
-
-.link_project {
-    color: white;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.link_project:hover {
-    color: $pink-pallete;
-}
-
-.cursor_pointer {
-    cursor: pointer;
-}
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
-    }
-
-    .project_img,
-    .link_project {
-        transition: none;
-    }
-
-    .project_img:hover {
-        transform: none;
     }
 }

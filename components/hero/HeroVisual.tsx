@@ -1,3 +1,4 @@
+import { memo } from "react";
 import dynamic from "next/dynamic";
 import HeroFallback from "./scene/HeroFallback";
 import SceneErrorBoundary from "./scene/SceneErrorBoundary";
@@ -24,4 +25,4 @@ const HeroVisual: React.FC<HeroVisualProps> = ({ reducedMotion = false, isMobile
   );
 };
 
-export default HeroVisual;
+export default memo(HeroVisual);

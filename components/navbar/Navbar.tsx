@@ -57,6 +57,9 @@ const Navbar: React.FC = () => {
               </li>
             ))}
           </ul>
+          <a className={styles.resume} href={SITE.cv}>
+            Resume
+          </a>
           <SocialLinks />
         </div>
 
@@ -88,6 +91,11 @@ const Navbar: React.FC = () => {
                 </a>
               </li>
             ))}
+            <li>
+              <a href={SITE.cv} onClick={closeMenu} tabIndex={open ? 0 : -1}>
+                Resume
+              </a>
+            </li>
           </ul>
           <div className={styles.mobileSocial}>
             <SocialLinks tabIndex={open ? 0 : -1} />

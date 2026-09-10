@@ -65,6 +65,14 @@
     }
 }
 
+.mediaStatic {
+    transform: none;
+
+    &:hover > * {
+        transform: none;
+    }
+}
+
 .body {
     min-width: 0;
     padding: 0.25rem 0.35rem 0.5rem;
@@ -334,13 +342,14 @@
 
 .moreMedia {
     overflow: hidden;
+    aspect-ratio: 16 / 10;
     border-bottom: 1px solid var(--border);
     background: var(--bg-alt);
 
     img {
         display: block;
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
         transition: transform 0.45s ease;
     }
@@ -374,6 +383,7 @@
 @media (prefers-reduced-motion: reduce) {
     .featured,
     .media,
+    .mediaStatic,
     .media > *,
     .tech li,
     .link,

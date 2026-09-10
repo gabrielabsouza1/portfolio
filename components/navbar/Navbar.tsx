@@ -1,88 +1,101 @@
-import React, { useState, useEffect } from 'react';
-import * as data from '../../public/data/navlinks.json';
-import styles from './style.module.scss';
-import Image from 'next/image';
-import { motion } from "framer-motion";
-import { useAnimationContext } from 'context/useAnimationContext';
-const linksString = JSON.stringify(data);
-const links = JSON.parse(linksString).links;
+import React, { useEffect, useState } from "react";
+import navData from "../../public/data/navlinks.json";
+import styles from "./style.module.scss";
+import { SITE } from "data/site";
+import SocialLinks from "components/social/SocialLinks";
 
 type NavLink = {
-    label: string;
-    href: string;
+  label: string;
+  href: string;
 };
 
+const links: NavLink[] = navData.links;
 
-const Links: React.FC<{ links: NavLink[] }> = ({ links }) => {
-    const [open, setOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-    const { variants, fadeUp } = useAnimationContext();
+const Navbar: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    const buttonHandler = (event: any) => {
-        event.preventDefault();
-        setOpen(!open);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
     };
 
-    useEffect(() => {
-        window.screen.width <= 991 && setIsMobile(true)
-    }, [])
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
+  const closeMenu = () => setOpen(false);
 
-    return (
-        <div className={styles.links_container}>
-            <div className={open ? `${styles.nav_icon} ${styles.open}` : `${styles.nav_icon}`} onClick={buttonHandler}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div className='position-relative'>
-                {isMobile &&
-                    (<div
-                        className={styles.list_links} 
-                        style={open ? { maxHeight: 240 + 'px', visibility: 'visible' } : { maxHeight: 0, visibility: 'hidden' }}>
-                        {links.map((link: NavLink) => {
-                            return (
-                                <div key={link.href} className={styles.link}>
-                                    <a href={link.href}>
-                                        {link.label}
-                                    </a>
-                                </div>
-                            )
-                        })}
-                    </div>)
-                }
-                {!isMobile &&
-                    (<motion.div
-                        variants={variants}
-                        initial="hidden"
-                        animate="show"
-                        className={styles.list_links}>
-                        {links.map((link: NavLink) => {
-                            return (
-                                <motion.div variants={fadeUp} key={link.href} className={styles.link}>
-                                    <a href={link.href}>
-                                        {link.label}
-                                    </a>
-                                </motion.div>
-                            )
-                        })}
-                    </motion.div>)
-                }
-            </div>
+  return (
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`} aria-label="Primary">
+      <div className={styles.bar}>
+        <a href="#top" className={styles.wordmark} onClick={closeMenu}>
+          {SITE.name}
+        </a>
+
+        <div className={styles.desktop}>
+          <ul className={styles.links}>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+          <SocialLinks />
         </div>
-    )
+
+        <button
+          type="button"
+          className={`${styles.toggle} ${open ? styles.open : ""}`}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((current) => !current)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      <div
+        id="mobile-navigation"
+        className={`${styles.mobile} ${open ? styles.mobileOpen : ""}`}
+        aria-hidden={!open}
+      >
+        <div className={styles.mobileInner}>
+          <ul className={styles.mobileLinks}>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} onClick={closeMenu} tabIndex={open ? 0 : -1}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.mobileSocial}>
+            <SocialLinks tabIndex={open ? 0 : -1} />
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
-
-const Navbar: React.FC<{}> = () => {
-
-    return (
-        <nav className={styles.navbar} style={{ zIndex: 10 }}>
-            <div className={styles['logo-container']}>
-                <a href={'/'}><Image height={92} width={70} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src="/img/logo2.png" className='img-fluid' alt="" /></a>
-            </div>
-            <Links links={links} />
-        </nav>
-    )
-}
 
 export default Navbar;

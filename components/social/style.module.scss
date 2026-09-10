@@ -1,0 +1,37 @@
+.social {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    background: transparent;
+    transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        color: var(--text);
+        border-color: var(--accent);
+        background: var(--accent-soft);
+        box-shadow: 0 0 20px var(--accent-glow);
+        text-decoration: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .icon {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
+}

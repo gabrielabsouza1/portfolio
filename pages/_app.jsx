@@ -1,14 +1,15 @@
 import '../styles/globals.scss'
 import ContextApiAnimation from '../context/useAnimationContext'
+import { MotionConfig } from 'framer-motion'
 
 export default function MyApp({ Component, pageProps }) {
 
   return (
-    <ContextApiAnimation>
-      <Component {...pageProps} />
-    </ContextApiAnimation>
+    <MotionConfig reducedMotion="user">
+      <ContextApiAnimation>
+        <Component {...pageProps} />
+      </ContextApiAnimation>
+    </MotionConfig>
   )
 
 }
-
-

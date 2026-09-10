@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { useAnimationContext } from '../../context/useAnimationContext'
 import { motion, useAnimation } from "framer-motion";
 
-const Experiences: React.FC<{}> = () => {
+const Experiences: React.FC = () => {
   type navExperiences = {
     showLeadster: boolean;
     showCNB: boolean;
@@ -36,11 +36,11 @@ const Experiences: React.FC<{}> = () => {
         animate={animation}
         className="col-lg-4 mb-5 pe-lg-5" >
         <div className="p-lg-5 p-3 background_dark" style={{ borderRadius: 7 + 'px' }}>
-          <motion.div variants={fadeUp} className={activeNavItem.showLeadster ? `${style.animation} d-flex justify-content-between align-items-center cursor_pointer mb-5 mt-lg-3` : `${style.animation} cursor_pointer mb-5 mt-lg-3`} onClick={() => setActiveNavItem(activeNavItem => ({ ...navExperiences, showLeadster: true }))}>
+          <motion.div variants={fadeUp} className={activeNavItem.showLeadster ? `${style.animation} d-flex justify-content-between align-items-center cursor_pointer mb-5 mt-lg-3` : `${style.animation} cursor_pointer mb-5 mt-lg-3`} onClick={() => setActiveNavItem(() => ({ ...navExperiences, showLeadster: true }))}>
             <h3 className={activeNavItem.showLeadster ? 'f_size_20 f_700 mb-0 text_pink' : 'text_white f_size_20 mb-0'}>Leadster</h3>
             {activeNavItem.showLeadster && <img src="/img/right-arrow2.png" className='img-fluid' alt="" />}
           </motion.div>
-          <motion.div variants={fadeUp} className={activeNavItem.showCNB ? `${style.animation} d-flex justify-content-between align-items-center cursor_pointer mb-5` : `${style.animation} cursor_pointer mb-5`} onClick={() => setActiveNavItem(activeNavItem => ({ ...navExperiences, showCNB: true, showLeadster: false }))}>
+          <motion.div variants={fadeUp} className={activeNavItem.showCNB ? `${style.animation} d-flex justify-content-between align-items-center cursor_pointer mb-5` : `${style.animation} cursor_pointer mb-5`} onClick={() => setActiveNavItem(() => ({ ...navExperiences, showCNB: true, showLeadster: false }))}>
             <h3 className={activeNavItem.showCNB ? 'f_size_20 f_700 mb-0 text_pink' : 'text_white f_size_20 mb-0'}>Casa do Nobreak</h3>
             {activeNavItem.showCNB && <img src="/img/right-arrow2.png" className='img-fluid' alt="" />}
           </motion.div>

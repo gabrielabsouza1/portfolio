@@ -1,0 +1,245 @@
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100svh;
+    padding: 6.5rem 1.5rem 3.25rem;
+    overflow: clip;
+    background: var(--bg);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -20%;
+        right: -10%;
+        width: 55vw;
+        height: 55vw;
+        max-width: 720px;
+        max-height: 720px;
+        background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+        pointer-events: none;
+    }
+
+    @media (min-width: 768px) {
+        padding: 7rem 2.5rem 4rem;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 6.5rem 4.5rem 4rem;
+    }
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.9fr);
+        align-items: center;
+        gap: 3.5rem;
+    }
+}
+
+.copy {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+.intro {
+    margin: 0 0 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(3rem, 8.6vw, 6.6rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.86;
+    text-transform: uppercase;
+}
+
+.role {
+    margin: 1.25rem 0 0;
+    font-size: clamp(0.82rem, 1.5vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.description {
+    max-width: 38rem;
+    margin: 1.1rem 0 0;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        padding: 0.4rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--text-subtle);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-strong);
+            color: var(--text);
+            background: var(--surface-hover);
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 1.75rem;
+}
+
+.pointerGlow {
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+}
+
+.magnetic {
+    display: inline-flex;
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+.visualWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(100%, 320px);
+    margin: 0 auto;
+
+    @media (min-width: 1024px) {
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+.visual {
+    position: relative;
+    width: min(100%, 520px);
+    aspect-ratio: 1;
+    mask-image: radial-gradient(circle at center, black 46%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle at center, black 46%, transparent 78%);
+}
+
+.canvasLayer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    canvas {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.fallback {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.grid {
+    position: absolute;
+    inset: 8%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: radial-gradient(circle at center, black 28%, transparent 74%);
+}
+
+.orbPrimary,
+.orbSecondary {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(42px);
+    pointer-events: none;
+}
+
+.orbPrimary {
+    width: 46%;
+    height: 46%;
+    top: 24%;
+    left: 27%;
+    background: rgba(235, 23, 107, 0.28);
+}
+
+.orbSecondary {
+    width: 32%;
+    height: 32%;
+    top: 38%;
+    left: 48%;
+    background: rgba(114, 38, 209, 0.22);
+}
+
+.corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.tl { top: 6%; left: 6%; border-right: 0; border-bottom: 0; }
+.tr { top: 6%; right: 6%; border-left: 0; border-bottom: 0; }
+.bl { bottom: 6%; left: 6%; border-right: 0; border-top: 0; }
+.br { bottom: 6%; right: 6%; border-left: 0; border-top: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+    .tech li,
+    .magnetic,
+    .pointerGlow {
+        transition: none;
+    }
+
+    .tech li:hover {
+        transform: none;
+    }
+}

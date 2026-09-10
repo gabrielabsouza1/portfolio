@@ -45,23 +45,6 @@ body {
     overflow-x: hidden;
 }
 
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 1rem;
-    z-index: 100;
-    padding: 0.65rem 1rem;
-    background: var(--text);
-    color: var(--bg);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 999px;
-}
-
-.skip-link:focus {
-    top: 1rem;
-}
-
 :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;

@@ -1,0 +1,28 @@
+.glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    width: min(42rem, 70vw);
+    height: min(42rem, 70vw);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+        circle,
+        rgba(255, 93, 154, 0.22) 0%,
+        rgba(235, 23, 107, 0.1) 28%,
+        rgba(114, 38, 209, 0.06) 52%,
+        transparent 70%
+    );
+    filter: blur(12px);
+    mix-blend-mode: screen;
+    transition: opacity 0.45s ease;
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glow {
+        display: none;
+    }
+}

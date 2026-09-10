@@ -30,7 +30,10 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    background: var(--bg);
+    background:
+        radial-gradient(1200px 700px at 85% -8%, rgba(255, 93, 154, 0.1), transparent 48%),
+        radial-gradient(900px 640px at -8% 70%, rgba(114, 38, 209, 0.07), transparent 46%),
+        var(--bg);
     color: var(--text);
 }
 

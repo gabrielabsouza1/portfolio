@@ -13,11 +13,15 @@
 }
 
 .primary {
-    background: var(--bg);
+    background:
+        radial-gradient(ellipse 70% 55% at 100% 0%, rgba(255, 93, 154, 0.07), transparent 52%),
+        var(--bg);
 }
 
 .secondary {
-    background: var(--bg-alt);
+    background:
+        radial-gradient(ellipse 65% 50% at 0% 100%, rgba(114, 38, 209, 0.08), transparent 50%),
+        var(--bg-alt);
 }
 
 .inner {

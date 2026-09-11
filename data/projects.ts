@@ -29,6 +29,7 @@ export type MoreProject = {
   imageAlt: string;
   imageWidth: number;
   imageHeight: number;
+  imageFit?: "cover" | "contain";
   liveUrl?: string;
   sourceUrl?: string;
 };
@@ -112,9 +113,10 @@ export const moreProjects: readonly MoreProject[] = [
       "MVVM Architecture",
     ],
     image: "/img/emp_management_project.png",
-    imageAlt: "Employee Management System Android app screens",
+    imageAlt: "Employee Management System Android app on a phone",
     imageWidth: 506,
     imageHeight: 976,
+    imageFit: "contain",
   },
   {
     id: "gallery",

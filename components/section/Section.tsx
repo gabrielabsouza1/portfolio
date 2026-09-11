@@ -9,6 +9,7 @@ type SectionProps = {
   tone?: "primary" | "secondary";
   titleAs?: "h2" | "p";
   description?: string;
+  layout?: "stack" | "split";
 };
 
 const Section: React.FC<SectionProps> = ({
@@ -20,13 +21,14 @@ const Section: React.FC<SectionProps> = ({
   tone = "primary",
   titleAs = "h2",
   description,
+  layout = "stack",
 }) => {
   const TitleTag = titleAs;
 
   return (
     <section
       id={id}
-      className={`${styles.section} ${styles[tone]} anchor`}
+      className={`${styles.section} ${styles[tone]}${layout === "split" ? ` ${styles.split}` : ""} anchor`}
       aria-labelledby={`${id}-title`}
     >
       <div className={styles.inner}>

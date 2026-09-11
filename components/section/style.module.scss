@@ -68,3 +68,29 @@
     font-size: 1.05rem;
     line-height: 1.7;
 }
+
+.split {
+    .header {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+        .inner {
+            display: grid;
+            grid-template-columns: minmax(0, 36rem) minmax(280px, 30rem);
+            column-gap: 3rem;
+            row-gap: 1.25rem;
+            align-items: start;
+            justify-content: start;
+        }
+
+        .header {
+            grid-column: 1;
+            margin-bottom: 0;
+        }
+
+        .title {
+            max-width: 14ch;
+        }
+    }
+}

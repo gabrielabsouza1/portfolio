@@ -13,20 +13,22 @@ const MoreProjectCard: React.FC<MoreProjectCardProps> = ({
   imageAlt,
   imageWidth,
   imageHeight,
+  imageFit = "cover",
   liveUrl,
   sourceUrl,
 }) => {
   return (
     <Reveal>
       <article className={styles.moreCard}>
-        <div className={styles.moreMedia}>
+        <div
+          className={`${styles.moreMedia} ${imageFit === "contain" ? styles.moreMediaContain : ""}`}
+        >
           <Image
             src={image}
             alt={imageAlt}
             width={imageWidth}
             height={imageHeight}
             sizes="(min-width: 800px) 40vw, 100vw"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </div>
         <div className={styles.moreBody}>
